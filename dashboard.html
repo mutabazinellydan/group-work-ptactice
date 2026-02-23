@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SIMS Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<link rel="stylesheet" href="dashbaord.css">
+<body>
+
+<aside class="sidebar">
+    <h2>SIMS<br>
+        <small>Stock Inventory Management System</small>
+    </h2>
+    <ul>
+        <li class="active" id="navDashboard">Dashboard</li>
+        <li id="navProducts">Products</li>
+        <li id="navReports">Reports</li>
+        <li id="navSettings">Settings</li>
+    </ul>
+</aside>
+
+<main class="main">
+
+    <section id="dashboardSection">
+        <div class="header">
+            <div class="title">
+                <h1>Dashboard</h1>
+                <p>Overview of your inventory status</p>
+            </div>
+            <div class="user">
+                <h4 id="loggedInUser"></h4>
+                <span>Administrator</span>
+                <button onclick="logout()" style="margin-left:10px;">Logout</button>
+            </div>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <h3>Total Products</h3>
+                <div class="number" id="totalProducts">0</div>
+            </div>
+            <div class="card">
+                <h3>In Stock</h3>
+                <div class="number" id="inStock">0</div>
+            </div>
+            <div class="card">
+                <h3>Out of Stock</h3>
+                <div class="number" id="outStock">0</div>
+            </div>
+        </div>
+
+        <div class="products">
+            <div class="products-header">
+                <h2>Products</h2>
+                <input type="text" id="searchInput" placeholder="Search products..." onkeyup="searchProducts()">
+                <button onclick="showAddProductForm()" style="margin-left:10px;">Add New Product</button>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>PRODUCT ID</th>
+                        <th>PRODUCT NAME</th>
+                        <th>CATEGORY</th>
+                        <th>QUANTITY</th>
+                        <th>PRICE</th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+                <tbody id="productTable">
+                </tbody>
+            </table>
+
+            <p id="emptyState">No products available.</p>
+        </div>
+    </section>
+
+    <section id="productsSection" style="display:none">
+        <h2>Products Page</h2>
+        <p>This section can be extended with detailed product management UI.</p>
+    </section>
+
+    <section id="reportsSection" style="display:none">
+        <h2>Reports Page</h2>
+        <p>Reports UI placeholder.</p>
+    </section>
+
+    <section id="settingsSection" style="display:none">
+        <h2>Settings Page</h2>
+        <p>Settings UI placeholder.</p>
+    </section>
+
+    <div id="addProductForm" style="display:none; background:#fff; padding:20px; border-radius:10px; position:absolute; top:50px; left:50%; transform:translateX(-50%); box-shadow:0 5px 10px rgba(0,0,0,0.2);">
+        <h3>Add New Product</h3>
+        <p id="productMessage" style="color:red;"></p>
+        <label>Product Name</label>
+        <input type="text" id="productName">
+        <label>Category</label>
+        <input type="text" id="productCategory">
+        <label>Quantity</label>
+        <input type="number" id="productQuantity">
+        <label>Price</label>
+        <input type="number" id="productPrice">
+        <div style="margin-top:10px;">
+            <button onclick="addProduct()">Add Product</button>
+            <button onclick="hideAddProductForm()">Cancel</button>
+        </div>
+    </div>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
