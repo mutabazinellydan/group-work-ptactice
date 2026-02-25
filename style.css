@@ -18,7 +18,7 @@ fieldset {
     padding: 30px;
     border-radius: 12px;
     border: none;
-    background: white;
+    background: bisque;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
@@ -78,7 +78,7 @@ button {
     padding: 10px;
     border-radius: 6px;
     border: none;
-    background-color: #25cdeb;
+    background-color:blue;
     color: white;
     cursor: pointer;
     font-weight: 500;
@@ -86,9 +86,8 @@ button {
 }
 
 button:hover {
-    background-color: #db7312;
+    background-color: aqua;
 }
-
 form p {
     text-align: center;
     margin-top: 15px;
@@ -106,3 +105,17 @@ form a {
     text-align: center;
     margin-bottom: 10px;
 }
+.data{
+    background-color: #194cb9;
+    height: 23px;
+    width: 350px;
+    border-radius: 16px;
+}
+
+.hy{
+    background-color: blue;
+    height: 25px;
+    width: 350px;
+    border-radius: 20px;
+}
+
